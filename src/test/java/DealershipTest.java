@@ -3,7 +3,7 @@ import org.junit.Before;
 import org.junit.Test;
 import people.Customer;
 import vehicles.Car;
-import vehicles.Vehicle;
+
 
 import static org.junit.Assert.assertEquals;
 
@@ -11,7 +11,7 @@ public class DealershipTest {
 
     Dealership dealership;
     Customer customer;
-    Vehicle vehicle;
+    Car car;
     Engine engine;
 
     @Before
@@ -19,7 +19,7 @@ public class DealershipTest {
         dealership = new Dealership(100000);
         customer = new Customer(10000);
         engine = new Engine("petrol");
-        vehicle = new Car(10000, "red", engine);
+        car = new Car(10000, "red", engine);
     }
 
     @Test
@@ -29,7 +29,7 @@ public class DealershipTest {
 
     @Test
     public void canAddVehicle(){
-        dealership.addVehicle(vehicle);
+        dealership.addVehicle(car);
         assertEquals(1, dealership.stockCount());
     }
 
@@ -37,5 +37,11 @@ public class DealershipTest {
     public void canAddMoneyToTill(){
         dealership.addMoneyToTill(100.00);
         assertEquals(100100.00, dealership.getTill(), 0.01);
+    }
+
+    @Test
+    public void canSellCarToCustomer(){
+        dealership.sellVehicleToCustomer(car, customer);
+        assertEquals(110000, dealership.getTill(), 0.01);
     }
 }

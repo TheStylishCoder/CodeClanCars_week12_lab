@@ -29,5 +29,10 @@ public class Dealership {
         this.stock.add(vehicle);
     }
 
-    
+    public void sellVehicleToCustomer(Vehicle vehicle, Customer customer){
+        if(vehicle.canBuy(customer)){
+            customer.buyVehicle(vehicle);
+            addMoneyToTill(vehicle.getPrice());
+        }
+    }
 }
