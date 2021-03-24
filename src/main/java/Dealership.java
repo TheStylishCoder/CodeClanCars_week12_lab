@@ -1,3 +1,4 @@
+import people.Customer;
 import vehicles.Vehicle;
 
 import java.util.ArrayList;
@@ -16,6 +17,10 @@ public class Dealership {
         return till;
     }
 
+    public void addMoneyToTill(double amount){
+        this.till += amount;
+    }
+
     public int stockCount() {
         return stock.size();
     }
@@ -23,4 +28,6 @@ public class Dealership {
     public void addVehicle(Vehicle vehicle) {
         this.stock.add(vehicle);
     }
+
+    
 }

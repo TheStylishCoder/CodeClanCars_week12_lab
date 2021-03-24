@@ -36,8 +36,8 @@ public class Customer {
         this.money -= price;
     }
 
-    public void buyVehicle(Car car) {
-        this.addVehicle(car);
-        this.removeMoney(car.getPrice());
+    public void buyVehicle(Vehicle vehicle) {
+        this.addVehicle(vehicle);
+        this.removeMoney(vehicle.getPrice());
     }
 }

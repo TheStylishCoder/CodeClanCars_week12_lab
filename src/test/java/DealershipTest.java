@@ -32,4 +32,10 @@ public class DealershipTest {
         dealership.addVehicle(vehicle);
         assertEquals(1, dealership.stockCount());
     }
+
+    @Test
+    public void canAddMoneyToTill(){
+        dealership.addMoneyToTill(100.00);
+        assertEquals(100100.00, dealership.getTill(), 0.01);
+    }
 }
