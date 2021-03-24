@@ -33,4 +33,8 @@ public abstract class Vehicle implements IBuy {
     public boolean canBuy(Customer customer){
         return customer.getMoney() >= this.price;
     }
+
+    public void addDamage(double discount){
+        this.price -= discount;
+    }
 }

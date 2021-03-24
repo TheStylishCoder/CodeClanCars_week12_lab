@@ -40,4 +40,10 @@ public class CarTest {
         assertEquals(true, car.canBuy(richCustomer));
         assertEquals(false, car.canBuy(poorCustomer));
     }
+
+    @Test
+    public void canDiscountPriceForDamage(){
+        car.addDamage(1500);
+        assertEquals(8500, car.getPrice(), 0.01);
+    }
 }

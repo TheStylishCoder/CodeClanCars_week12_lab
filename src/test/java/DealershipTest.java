@@ -44,4 +44,6 @@ public class DealershipTest {
         dealership.sellVehicleToCustomer(car, customer);
         assertEquals(110000, dealership.getTill(), 0.01);
     }
+
+
 }

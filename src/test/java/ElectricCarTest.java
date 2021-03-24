@@ -1,6 +1,7 @@
 import components.Engine;
 import org.junit.Before;
 import org.junit.Test;
+import people.Customer;
 import vehicles.ElectricCar;
 
 import static org.junit.Assert.assertEquals;
@@ -29,5 +30,19 @@ public class ElectricCarTest {
     @Test
     public void hasEngine(){
         assertEquals(engine, electricCar.getEngine());
+    }
+
+    @Test
+    public void canBuy(){
+        Customer richCustomer = new Customer(30000);
+        Customer poorCustomer = new Customer(100);
+        assertEquals(true, electricCar.canBuy(richCustomer));
+        assertEquals(false, electricCar.canBuy(poorCustomer));
+    }
+
+    @Test
+    public void canDiscountPriceForDamage(){
+        electricCar.addDamage(5000);
+        assertEquals(15000, electricCar.getPrice(), 0.01);
     }
 }
